@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-SuccessResponse">
+    <DisplayName>AM-SuccessResponse</DisplayName>
+    <Set>
+        <Payload contentType="application/json">
+            {
+                "status":"200",
+                "environment":"{environment.name}",
+                "message":"Key Added Succesfully",
+                "debug":{
+                    "key":"{newValues.key}",
+                    "value":"{newValues.value}"
+                }
+            }
+        </Payload>
+        <StatusCode>200</StatusCode>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="true" transport="http" type="response"/>
+</AssignMessage>

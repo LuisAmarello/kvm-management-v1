@@ -1,0 +1,24 @@
+<APIProxy revision="7" name="kvm-management-v1">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1724719683038</CreatedAt>
+    <LastModifiedAt>1724719683038</LastModifiedAt>
+    <BasePaths>/kvm-management</BasePaths>
+    <Policies>
+        <Policy>EV-ReadApiKey</Policy>
+        <Policy>AM-SuccessResponse</Policy>
+        <Policy>AM-DebugAPIKey</Policy>
+        <Policy>EV-ReadRequest</Policy>
+        <Policy>KVM-Scopes-NewEntry</Policy>
+        <Policy>KVM-Scopes-GetEntry</Policy>
+        <Policy>KVM-Scopes-NewEntry-Credentials</Policy>
+        <Policy>KVM-Scopes-NewEntry-JWT-Keys</Policy>
+        <Policy>KVM-Scopes-GetEntry-JWT-Keys</Policy>
+        <Policy>KVM-Scopes-GetEntry-Credentials</Policy>
+        <Policy>KVM-Scopes-NewEntry-Auth-Server</Policy>
+        <Policy>KVM-Scopes-GetEntry-Auth-Server</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+</APIProxy>

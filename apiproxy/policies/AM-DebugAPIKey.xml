@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-DebugAPIKey">
+    <DisplayName>AM-DebugAPIKey</DisplayName>
+    <Set>
+        <Payload contentType="application/json">
+            {
+                "status":"200",
+                "environment":"{environment.name}",
+                "message":"Value for {key} Retrieved Succesfully",
+                "debug":{
+                    "key":"{key}",
+                    "value":"{private.value}"
+                }
+            }</Payload>
+    </Set>
+    <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>

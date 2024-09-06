@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables continueOnError="false" enabled="true" name="EV-ReadApiKey">
+    <DisplayName>EV-ReadApiKey</DisplayName>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <JSONPayload>
+        <Variable name="key">
+            <JSONPath>$.key</JSONPath>
+        </Variable>
+        <Variable name="value">
+            <JSONPath>$.value</JSONPath>
+        </Variable>
+    </JSONPayload>
+    <Source clearPayload="false">request</Source>
+    <VariablePrefix>newValues</VariablePrefix>
+</ExtractVariables>

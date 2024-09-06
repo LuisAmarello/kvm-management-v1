@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations continueOnError="false" enabled="true" name="KVM-Scopes-GetEntry-JWT-Keys" mapIdentifier="jwt-keys">
+    <DisplayName>KVM-Scopes-GetEntry-JWT-Keys</DisplayName>
+    <Get assignTo="private.value" index="1">
+        <Key>
+            <Parameter ref="key"/>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

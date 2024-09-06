@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations continueOnError="false" enabled="true" name="KVM-Scopes-GetEntry" mapIdentifier="certs">
+    <DisplayName>KVM-Scopes-GetEntry</DisplayName>
+    <Get assignTo="private.value" index="1">
+        <Key>
+            <Parameter ref="key"/>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

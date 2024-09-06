@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations continueOnError="false" enabled="true" name="KVM-Scopes-NewEntry-Auth-Server" mapIdentifier="auth-server">
+    <DisplayName>KVM-Scopes-NewEntry-Auth-Server</DisplayName>
+    <Properties/>
+    <Put override="true">
+        <Key>
+            <Parameter ref="newValues.key"/>
+        </Key>
+        <Value ref="newValues.value"/>
+    </Put>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

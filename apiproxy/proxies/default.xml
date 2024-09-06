@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="Generate Entry">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>EV-ReadApiKey</Name>
+                </Step>
+                <Step>
+                    <Name>KVM-Scopes-NewEntry</Name>
+                    <Condition>(request.header.X-kvm = "certs")</Condition>
+                </Step>
+                <Step>
+                    <Name>KVM-Scopes-NewEntry-Credentials</Name>
+                    <Condition>(request.header.X-kvm = "credentials")</Condition>
+                </Step>
+                <Step>
+                    <Name>KVM-Scopes-NewEntry-JWT-Keys</Name>
+                    <Condition>(request.header.X-kvm = "jwt-keys")</Condition>
+                </Step>
+                <Step>
+                    <Name>KVM-Scopes-NewEntry-Auth-Server</Name>
+                    <Condition>(request.header.X-kvm = "auth-server")</Condition>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM-SuccessResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/entries") and (request.verb = "PUT")</Condition>
+        </Flow>
+        <Flow name="Get Entry">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>EV-ReadRequest</Name>
+                </Step>
+                <Step>
+                    <Name>KVM-Scopes-GetEntry</Name>
+                    <Condition>(request.header.X-kvm = "certs")</Condition>
+                </Step>
+                <Step>
+                    <Name>KVM-Scopes-GetEntry-JWT-Keys</Name>
+                    <Condition>(request.header.X-kvm = "jwt-keys")</Condition>
+                </Step>
+                <Step>
+                    <Name>KVM-Scopes-GetEntry-Credentials</Name>
+                    <Condition>(request.header.X-kvm = "credentials")</Condition>
+                </Step>
+                <Step>
+                    <Name>KVM-Scopes-GetEntry-Auth-Server</Name>
+                    <Condition>(request.header.X-kvm = "auth-server")</Condition>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM-DebugAPIKey</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/entries") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/kvm-management</BasePath>
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>
